@@ -96,6 +96,37 @@
           }
         }
       }
+    },
+    "conlog-component": {
+      "projectType": "library",
+      "root": "projects/conlog-component",
+      "sourceRoot": "projects/conlog-component/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/conlog-component/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/conlog-component/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/conlog-component/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/conlog-component/src/test.ts",
+            "tsConfig": "projects/conlog-component/tsconfig.spec.json",
+            "karmaConfig": "projects/conlog-component/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
